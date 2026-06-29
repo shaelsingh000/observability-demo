@@ -3,3 +3,10 @@ replicaCount: 2
 image:
   repository: sample-app
   tag: v1
+  pullPolicy: Never
+
+service:
+  type: ClusterIP
+  port: 5000
+
+containerPort: 5000

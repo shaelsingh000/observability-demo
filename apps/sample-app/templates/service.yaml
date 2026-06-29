@@ -5,12 +5,11 @@ metadata:
   name: {{ .Release.Name }}
 
 spec:
+  type: {{ .Values.service.type }}
+
   selector:
     app: {{ .Release.Name }}
 
   ports:
-    - protocol: TCP
-      port: 5000
-      targetPort: 5000
-
-  type: ClusterIP
+  - port: {{ .Values.service.port }}
+    targetPort: {{ .Values.containerPort }}

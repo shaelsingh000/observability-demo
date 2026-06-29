@@ -18,9 +18,11 @@ spec:
 
     spec:
       containers:
-        - name: sample-app
-          image: sample-app:v1
-          imagePullPolicy: Never
+      - name: sample-app
 
-          ports:
-            - containerPort: 5000
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+
+        ports:
+        - containerPort: {{ .Values.containerPort }}
