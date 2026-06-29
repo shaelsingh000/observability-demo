@@ -1,0 +1,11 @@
+loki:
+  enabled: true
+
+  host: loki-gateway.monitoring.svc.cluster.local
+
+  port: 80
+
+  labels:
+    job: fluent-bit
+
+  autoKubernetesLabels: true
